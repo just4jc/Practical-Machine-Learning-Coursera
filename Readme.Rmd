@@ -1,0 +1,28 @@
+## Introduction
+
+# Practical Machine Learning Coursera Project - As part of the fulfilment of the Coursera Data Specialist Course
+
+Devices such as Jawbone Up, Nike FuelBand, and Fitbit enable the collection of a large amount of gym activity data. The data is collected from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. The outcome variable has five classes and the total number of predictors are 159. The machine learning algorithm described here is applied to the 20 test cases in the test data for a seperate Course Project Prediction quiz and the predictions are submitted for grading
+
+Training data for this project were downloaded from "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv" and the test dataset was downloaded from "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv". The data for this project come from "http://groupware.les.inf.puc-rio.br/har"
+
+## Modeling - Prediction Model Building
+
+Random forest model, Decision Trees and Generalised Boosted Models were adopted to see which model worked best. The accuracy of the 3 regression modeling methods were : Random Forest : 0.9963 Decision Tree : 0.7368 GBM : 0.9839
+
+Random forest model was the best performing model and was chosen and the data set was checked for columns without any data and all the columns with less than 60% of data were removed.
+
+In the new training set and validation set created, there were 52 predictors and 1 response. The correlations between the predictors and the outcome variable in the new training set were checked. There doesn’t seem to be any predictors strongly correlated with the outcome variable, so linear regression model may not be a good option. Random forest model may be more robust for this data.
+
+## Cross Model Validation
+
+In trying to solve a classification problem, we try to use the classification method, using the caret package: classification tree algorithm and random forest. A 3-fold validation using the 'trainControl' function was carried out.
+
+## Prediction Quiz Results
+
+Predicted classes for the 20 tests are: B A B A A E D B A A B C B A E E A B B B
+
+## Conclusion
+
+52 variables were used to build the random forest model with a 3-fold cross validation. The out-of-sample error was approximately 0.9%.
+
